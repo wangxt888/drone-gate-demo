@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="无人机室内真机飞行 Demo：直接在线播放起飞、飞行与降落视频。">
-  <title>无人机室内飞行 · Demo</title>
+  <meta name="description" content="无人机系统与飞行 Demo：在线播放室内飞行、悬停测试和三路视觉识别视频。">
+  <title>无人机系统与飞行 · Demo</title>
   <!-- 自适应展示视频，窄屏下保持完整画面。 -->
   <style>
     :root{color-scheme:dark;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;background:#101419;color:#edf2f7}
@@ -12,19 +12,41 @@
     .tag{color:#88c9b3;font-size:13px;letter-spacing:2px}h1{font-size:clamp(26px,5vw,42px);margin:14px 0}
     p{color:#b7c3cf;line-height:1.8}video{display:block;width:100%;height:auto;background:#000;border-radius:12px;margin:28px 0 16px}
     a{color:#9cdbc4;text-underline-offset:4px}.foot{margin-top:28px;font-size:14px}
+    /* ###wxt改，改动为：为多段视频增加章节间距与页内导航。 */
+    section{margin-top:44px;scroll-margin-top:24px}h2{font-size:24px}nav{line-height:2.2}nav a{display:inline-block;margin-right:24px}
   </style>
 </head>
 <body>
   <main>
     <div class="tag">UAV · FLIGHT DEMO</div>
-    <h1>无人机室内飞行</h1>
-    <p>约 31 秒真机演示，记录室内起飞、飞行与降落过程。点击播放，可全屏观看。</p>
+    <h1>无人机系统与飞行</h1>
+    <p>从整机搭建、动捕定位到视觉感知与仿真。点击下方视频直接播放，可全屏观看。</p>
+    <nav aria-label="演示导航"><a href="#indoor-flight">室内飞行</a><a href="#flight-test">近景飞行</a><a href="#vision">视觉识别</a></nav>
+    <section id="indoor-flight">
+    <h2>01 · 室内飞行</h2>
+    <p>约 31 秒，记录室内起飞、飞行与降落过程。</p>
     <!-- 使用浏览器原生播放器，保留播放、音量、进度与全屏操作。 -->
     <video controls playsinline preload="metadata" poster="media/flight-poster.jpg" aria-label="无人机室内真机飞行演示">
       <source src="media/indoor-flight.mp4" type="video/mp4">
       当前浏览器不支持视频播放，请使用支持 HTML5 视频的浏览器。
     </video>
-    <p>该片段为真机飞行记录，不包含穿框动作。项目另包含 ROS / PX4 / Gazebo 视觉穿框仿真。</p>
+    </section>
+    <!-- ###wxt改，改动为：新增飞书项目记录中的近景飞行与视觉识别视频。 -->
+    <section id="flight-test">
+      <h2>02 · 近景飞行测试</h2>
+      <p>约 44 秒，真机起飞与悬停测试。</p>
+      <video controls playsinline preload="metadata" poster="media/flight-test-poster.jpg" aria-label="真机起飞与悬停测试">
+        <source src="media/flight-test.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section id="vision">
+      <h2>03 · 三路视觉识别</h2>
+      <p>约 58 秒，对比门洞轮廓、NPU 特征匹配与 AprilTag 检测结果。</p>
+      <video controls playsinline preload="metadata" poster="media/vision-poster.jpg" aria-label="三路视觉检测对比">
+        <source src="media/vision.mp4" type="video/mp4">
+      </video>
+    </section>
+    <p>以上为分阶段实验记录。项目另包含 ROS / PX4 / Gazebo 视觉穿框仿真。</p>
     <div class="foot"><a href="https://github.com/wangxt888/drone-gate-demo">查看 GitHub 项目 ↗</a></div>
   </main>
 </body>
