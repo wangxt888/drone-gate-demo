@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="无人机室内真机飞行 Demo：直接在线播放起飞、飞行与降落视频。">
+  <title>无人机室内飞行 · Demo</title>
+  <!-- 自适应展示视频，窄屏下保持完整画面。 -->
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;background:#101419;color:#edf2f7}
+    body{margin:0}main{max-width:1080px;margin:0 auto;padding:56px 22px}
+    .tag{color:#88c9b3;font-size:13px;letter-spacing:2px}h1{font-size:clamp(26px,5vw,42px);margin:14px 0}
+    p{color:#b7c3cf;line-height:1.8}video{display:block;width:100%;height:auto;background:#000;border-radius:12px;margin:28px 0 16px}
+    a{color:#9cdbc4;text-underline-offset:4px}.foot{margin-top:28px;font-size:14px}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">UAV · FLIGHT DEMO</div>
+    <h1>无人机室内飞行</h1>
+    <p>约 31 秒真机演示，记录室内起飞、飞行与降落过程。点击播放，可全屏观看。</p>
+    <!-- 使用浏览器原生播放器，保留播放、音量、进度与全屏操作。 -->
+    <video controls playsinline preload="metadata" poster="media/flight-poster.jpg" aria-label="无人机室内真机飞行演示">
+      <source src="media/indoor-flight.mp4" type="video/mp4">
+      当前浏览器不支持视频播放，请使用支持 HTML5 视频的浏览器。
+    </video>
+    <p>该片段为真机飞行记录，不包含穿框动作。项目另包含 ROS / PX4 / Gazebo 视觉穿框仿真。</p>
+    <div class="foot"><a href="https://github.com/wangxt888/drone-gate-demo">查看 GitHub 项目 ↗</a></div>
+  </main>
+</body>
+</html>
